@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   
   # Test route to confirm cookie and session middleware functionality
   get '/hello', to: 'application#hello_world'
+
+  # User and session routes
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  get "/me", to: "users#show"
+  post "/signup", to: "users#create"
 end
